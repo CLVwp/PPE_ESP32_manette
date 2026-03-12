@@ -37,4 +37,11 @@
 #define WIFI_CONNECT_TIMEOUT_MS 15000UL
 #define WIFI_RETRY_DELAY_MS 10000UL
 
+// Raspberry Pi cible (commande joystick)
+// À adapter avec l'IP fixe de ta Raspberry sur le réseau.
+#define RPI_IP        "192.168.137.77"
+#define RPI_UDP_PORT  5000
+// Fréquence d'envoi des infos joystick (en ms)
+#define JOY_SEND_INTERVAL_MS 50UL
+
 #endif

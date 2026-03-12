@@ -5,6 +5,7 @@
 #include "task_joystick.h"
 #include "task_display.h"
 #include "task_leds.h"
+#include "task_sender.h"
 #include "wifi_manager.h"
 
 void setup() {
@@ -39,6 +40,7 @@ void setup() {
   xTaskCreatePinnedToCore(taskJoystick, "Joy", 4096, NULL, 2, NULL, 0);
   xTaskCreatePinnedToCore(taskDisplay, "Disp", 4096, NULL, 1, NULL, 1);
   xTaskCreatePinnedToCore(taskLEDs, "LED", 2048, NULL, 0, NULL, 0);
+  xTaskCreatePinnedToCore(taskSender, "Send", 2048, NULL, 1, NULL, 1);
   startWifiTask();
 
   Serial.println(F("RTOS: 3 tâches + WiFi + ISR bouton"));
