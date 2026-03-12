@@ -2,6 +2,19 @@
 # recevoir les données du joystick ET exposer une petite page web
 # de télémétrie en temps réel.
 
+# Tout autre service (dans un autre conteneur ou sur la même machine) peut simplement faire des requêtes HTTP GET sur:
+#http://receiver:8000/telemetry (si tu as un réseau Docker et un hostname)
+# ou http://IP_DE_LA_RPI:8000/telemetry (en utilisant l’IP/port de la Pi).
+# Il récupère alors un JSON du type :
+ #   {      
+ # "posX": 66,      
+ # "posY": 31,      
+ # "action": 4,      
+ # "mode": 1,      
+ # "last_sender": "192.168.137.109:58840"
+ #}
+#
+
 import socket
 import threading
 import json
